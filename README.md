@@ -14,8 +14,8 @@
 
 ## Configuration
 
-- Django 3.0 listen on port `8000`
-- MySQL 8.0.19 listen on port `3306`, user/pass = mydjangoapp
+- Django 3.0 listen on port `8000` localhost
+- MySQL 8.0.19 listen on port `13306` localhost, user/pass = mydjangoapp
 
 ## Change default port and user/pass setting
 
