@@ -2,12 +2,17 @@
 
 ## How to deloy on your laptop
 
-- install docker desktop in you PC
+- install VScode
+- install docker desktop
 - clone the repository
 - run `docker-compose up -d` , that's it!
-- open your browser and visit `http://localhost:8000`
 
-## Setup
+## Verify
+
+- open your browser and visit `http://localhost:8000`
+- exam container log `docker logs -f helloworld_web_1`
+
+## Configuration
 
 - Django 3.0 listen on port `8000`
 - MySQL 8.0.19 listen on port `3306`, user/pass = mydjangoapp
