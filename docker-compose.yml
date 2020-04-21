@@ -11,6 +11,9 @@ services:
     environment:
       MYSQL_USER: mydjangoapp
       MYSQL_PASSWORD: mydjangoapp
+    command: /usr/local/bin/gunicorn helloworld.wsgi:application -w 2 -b :8000 --reload
+    volumes:
+      - ./:/app
     depends_on:
       - db
   db:
