@@ -36,7 +36,13 @@ docker exec -it helloworld_web_1 python manage.py migrate
 
 `docker exec -it helloworld_web_1 id`
 
-## Change default port and user/pass setting
+## MISC
+
+### Login to container with shell
+
+`docker exec -it helloworld_web_1 bash`
+
+### Change default port and user/pass setting
 
 - Edit `docker-compose.yml` file in the root project folder
 - Rebuild db container: `docker-compose up --build -d db`
