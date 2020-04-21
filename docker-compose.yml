@@ -1,10 +1,38 @@
-version: '3.4'
+version: "3.4"
 
 services:
-  helloworld:
+  web:
     image: helloworld
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - 8000
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:8.0.19
+    ports:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: mydjangoapp
+      MYSQL_USER: mydjangoapp
+      MYSQL_PASSWORD: mydjangoapp
+      MYSQL_DATABASE: mydjangoapp
+      healthcheck:
+        test:
+          [
+            "CMD",
+            "mysqladmin",
+            "-u$MYSQL_USER",
+            "-p$MYSQL_PASSWORD",
+            "ping",
+            "-h",
+            "localhost",
+          ]
+        timeout: 20s
+        retries: 10
+      restart: always
+      volumes:
+        - mysql_data:/var/lib/mysql
