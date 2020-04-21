@@ -27,10 +27,20 @@ you donot need to do anything cuz gunicorn will reload automatically in case of 
 
 Use mysql workbanch or something simular
 
+### Django db migrations
+
+```
+docker exec -it helloworld_web_1 python manage.py makemigrations
+docker exec -it helloworld_web_1 python manage.py migrate
+```
+
+`docker exec -it helloworld_web_1 id`
+
 ## Change default port and user/pass setting
 
 - Edit `docker-compose.yml` file in the root project folder
-- Rebuild docker container: `docker-compose up --force-recreate --no-deps -d`
+- Rebuild db container: `docker-compose up --build -d db`
+- Rebuild web container: `docker-compose up --build -d web`
 
 or, you may try a **CLEAN** start as
 
