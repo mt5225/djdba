@@ -44,3 +44,4 @@ pydevd*.log
 nodeLanguageServer/**
 nodeLanguageServer.*/**
 db.sqlite3
+/mysql_data
