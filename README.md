@@ -36,7 +36,7 @@ docker exec -it helloworld_web_1 python manage.py migrate
 
 `docker exec -it helloworld_web_1 id`
 
-## MISC
+## Misc
 
 ### Login to container with shell
 
