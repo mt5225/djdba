@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'locallibrary.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'master_user',
-        'PASSWORD': 'password',
-        'HOST': 'lim-rds-db01-cluster.cluster-cznhlbaqedyj.us-west-2.rds.amazonaws.com',
+        'NAME': 'mydjangoapp',
+        'USER': 'mydjangoapp',
+        'PASSWORD': 'mydjangoapp',
+        'HOST': 'db',
         'PORT': '3306',
     }
 }
@@ -120,12 +120,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    '/app/static/',
-    '/app/static/admin',
-]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/app/static'
