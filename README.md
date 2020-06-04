@@ -10,7 +10,8 @@
 ## Verify
 
 - open your browser and visit `http://localhost:8000`
-- exam container log `docker logs -f helloworld_web_1`
+- admin console `http://localhost:8000/admin`
+- exam container log `docker logs -f djdba_web_1`
 
 ## Configuration
 
@@ -30,17 +31,16 @@ Use mysql workbanch or something simular
 ### Django db migrations
 
 ```
-docker exec -it helloworld_web_1 python manage.py makemigrations
-docker exec -it helloworld_web_1 python manage.py migrate
+docker exec -it djdba_web_1 python manage.py makemigrations
+docker exec -it djdba_web_1 python manage.py migrate
 ```
 
-`docker exec -it helloworld_web_1 id`
 
 ## Misc
 
 ### Login to container with shell
 
-`docker exec -it helloworld_web_1 bash`
+`docker exec -it djdba_web_1 bash`
 
 ### Change default port and user/pass setting
 
@@ -53,3 +53,8 @@ or, you may try a **CLEAN** start as
 - stop docker compose: `$ docker-compose down`
 - remove ALL container and images: `$ docker system prune -a`
 - start docker compose: `$ docker-compose up -d`
+
+### Tutorial
+```
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
+```
