@@ -2,18 +2,18 @@ version: "3.4"
 
 services:
   web:
-    image: helloworld
+    image: loallibrary
     build:
-      context: .
+      context: ./locallibrary
       dockerfile: Dockerfile
     ports:
       - 8000:8000
     environment:
       MYSQL_USER: mydjangoapp
       MYSQL_PASSWORD: mydjangoapp
-    command: /usr/local/bin/gunicorn helloworld.wsgi:application -w 2 -b :8000 --reload
+    command: /usr/local/bin/gunicorn locallibrary.wsgi:application -w 2 -b :8000 --reload
     volumes:
-      - .:/app
+      - ./locallibrary:/app
     depends_on:
       - db
   db:
